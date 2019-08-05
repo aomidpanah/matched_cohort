@@ -1,6 +1,6 @@
-## calculate the coverage of the 95% CI for the beta-1 term (OR of response for unit diff in X)
+## calculate the coverage of the 90% CI for the beta-1 term (OR of response for unit diff in X)
 cover <- function(fit) {
-  ci <- confint.default(fit)[2, ]
+  ci <- confint.default(fit, 0.9)[2, ]
   b1 > ci[1] & b1 < ci[2] 
 }
 
