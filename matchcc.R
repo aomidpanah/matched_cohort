@@ -45,7 +45,7 @@ do.one <- function() {
               fmcc.adj = glm(ycc ~ xcc + wcc, family=binomial, subset=i.mcc)
   )
   
-  c('nall' = n, 'nmcoh' = 200, 'ncc' = length(i.cc), 'nmcc' = length(i.mcc), 
+  c('nall' = n, 'nmcoh' = length(i.mcohort), 'ncc' = length(i.cc), 'nmcc' = length(i.mcc), 
     se = sapply(sapply(mod, vcov), `[`, i=2, j=2)^.5,
     cv = sapply(mod, cover)
     )
